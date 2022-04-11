@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div>
+      <div id="dado"></div>
+      <button onclick="showResult('dado')">Lanzar dado</button>
+    </div>
+    <div>
+      <div id="dado2"></div>
+      <button onclick="showResult('dado2')">Lanzar dado</button>
+    </div>
+    <div>
+      <div id="dado3"></div>
+      <button onclick="showResult('dado3')">Lanzar dado</button>
+    </div>
+  </body>
+  <script>
+    function lanzarDado() {
+      return Math.floor(Math.random() * 6) + 1;
+    }
+
+    function showResult(id) {
+      const element = document.getElementById(id);
+      const resultado = lanzarDado();
+      element.innerHTML = "<h1>" + resultado + "</h1>";
+    }
+  </script>
+</html>
